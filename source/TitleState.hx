@@ -28,7 +28,7 @@ import openfl.Assets;
 import Discord.DiscordClient;
 #end
 
-#if desktop
+#if cpp
 import sys.thread.Thread;
 #end
 
@@ -66,7 +66,7 @@ class TitleState extends MusicBeatState
 		
 		PlayerSettings.init();
 
-		#if desktop
+		#if windows
 		DiscordClient.initialize();
 
 		Application.current.onExit.add (function (exitCode) {

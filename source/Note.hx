@@ -174,7 +174,10 @@ class Note extends FlxSprite
 				}
 
 				
-				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.8 * FlxG.save.data.scrollSpeed;
+				if(FlxG.save.data.scrollSpeed != 1)
+					prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.5 * FlxG.save.data.scrollSpeed;
+				else
+					prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.5 * PlayState.SONG.speed;
 				prevNote.updateHitbox();
 				// prevNote.setGraphicSize();
 			}
@@ -188,13 +191,13 @@ class Note extends FlxSprite
 		if (mustPress)
 		{
 			// The * 0.5 is so that it's easier to hit them too late, instead of too early
-			if (strumTime > Conductor.songPosition - Conductor.safeZoneOffset
+			if (strumTime > Conductor.songPosition - (Conductor.safeZoneOffset * 1.5)
 				&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.5))
 				canBeHit = true;
 			else
 				canBeHit = false;
 
-			if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset && !wasGoodHit)
+			if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset * Conductor.timeScale && !wasGoodHit)
 				tooLate = true;
 		}
 		else

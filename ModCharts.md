@@ -1,6 +1,6 @@
 # Kade Engine Lua Mod Chart Documentation
 
-In the latest version of Kade Engine we introduced Mod Charts. Mod Charts are a way of changing gameplay without hard coded values, this is achieved by using the Lua Scripting language to create script files that run during runtime.
+In the 1.4.2 release of Kade Engine, we introduced Mod Charts. Mod Charts are a way of changing gameplay without hard coded values. This is achieved by using the Lua Scripting language to create script files that run during runtime.
 
 All files **are located in** `assets/data/song/`
 
@@ -133,8 +133,9 @@ Kade Engine provides a list of global variables to be used in the lua scripting 
 |     screenHeight     |  Int  |             The height of the current gamespace              |
 |       hudWidth       |  Int  |                     The width of the hud                     |
 |      hudHeight       |  Int  |                    The height of the hud                     |
-
-
+|	  scrollSpeed	   |  Int  |				   The current scrollspeed					  |
+|	  	mustHit		   | Bool  |  		If the current section is a must hit section		  |
+|	  strumLineY	   | Float |  			The current Strum Line Y Position				  |
 
 ## Functions
 
@@ -197,7 +198,7 @@ Set's the current camera's zoom
 
 Set's the hud's zoom
 
-### Actor's
+### Actors
 
 ##### getRenderedNotes()
 
@@ -205,31 +206,89 @@ Returns the amount of rendered notes.
 
 ##### getRenderedNoteX(int id)
 
-Return's the x position of the rendered note id
+Returns the x position of the rendered note id
 
 *Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
 
 ##### getRenderedNoteY(int id)
 
-Return's the y position of the rendered note id
+Returns the y position of the rendered note id
 
 *Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
 
 ##### getRenderedNoteScaleX(int id)
 
-Return's the scale x of the rendered note id
+Returns the scale x of the rendered note id
 
 *Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
 
 ##### getRenderedNoteScaleY(int id)
 
-Return's the scale y of the rendered note id
+Returns the scale y of the rendered note id
+
+*Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
+
+##### getRenderedNoteType(int id)
+
+Returns the note data of an note (0-3, left, down, up, right)
+
+*Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
+
+##### isSustain(int id)
+
+Returns whether a rendered note is a sustain note or not (if they appear as the trail)
+
+*Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
+
+##### isParentSustain(int id)
+
+Returns whether a rendered note's parrent is a sustain note or not (if they appear as the trail)
+
+*Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
+
+##### getRenderedNoteParentX(int id)
+
+Returns the current parent x of the specified rendered note's id
+
+*Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
+
+##### getRenderedNoteParentY(int id)
+
+Returns the current parent y of the specified rendered note's id
+
+*Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
+
+##### getRenderedNoteCalcX(int id)
+
+Returns what the game would normally put the specified rendered note x.
+
+*Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
+
+##### anyNotes()
+
+Returns the number of rendered notes on the screen.
+
+##### getRenderedNoteStrumtime(int id)
+
+Returns strum time of the rendered note.
 
 *Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
 
 ##### getRenderedNoteAlpha(int id)
 
-Return's the alpha of the rendered note id
+Returns the alpha of the rendered note id
+
+*Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
+
+##### getRenderedNoteWidth(int id)
+
+Returns the width of the specified rendered note.
+
+*Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
+
+##### getRenderedNoteAngle(int id)
+
+Returns the angle of the specified rendered note.
 
 *Note: Rendered Notes id's are special in the way that they act. 0 = closest note to any receptor, last index = the farthest away from any receptor.*
 
