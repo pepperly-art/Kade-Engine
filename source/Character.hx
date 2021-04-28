@@ -139,6 +139,25 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
+
+			case 'perpsona-boss':
+				tex = Paths.getSparrowAtlas('Perpsona_Boss','shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'perpsona-boss idle', 24);
+				animation.addByPrefix('singUP', 'perpsona-boss up', 24);
+				animation.addByPrefix('singRIGHT', 'perpsona-boss right', 24);
+				animation.addByPrefix('singDOWN', 'perpsona-boss down', 24);
+				animation.addByPrefix('singLEFT', 'perpsona-boss left', 24);
+
+				// screams at offset
+				addOffset('idle', 0, -220);
+				addOffset("singUP", -6, -170);
+				addOffset("singRIGHT", 0, -193);
+				addOffset("singLEFT", -10, -210);
+				addOffset("singDOWN", 0, -250);
+
+				playAnim('idle');
+
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('spooky_kids_assets','week2');
 				frames = tex;
