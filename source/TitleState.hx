@@ -311,7 +311,7 @@ class TitleState extends MusicBeatState
 
 				// Get current version of Kade Engine // I'm clearing this out since it's a custom exe
 
-				/*var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
+				var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
 
 				 http.onData = function (data:String) {
 				  
@@ -334,7 +334,7 @@ class TitleState extends MusicBeatState
 				}
 				
 				http.request();
-				*/
+				
 
 			});
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
