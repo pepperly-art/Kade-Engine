@@ -88,7 +88,7 @@ class TitleState extends MusicBeatState
 		trace('NEWGROUNDS LOL');
 		#end
 
-		FlxG.save.bind('funkin', 'ninjamuffin99');
+		FlxG.save.bind('funkin', 'pepperly');
 
 		KadeEngineData.initSave();
 
@@ -205,7 +205,7 @@ class TitleState extends MusicBeatState
 		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		credGroup.add(blackScreen);
 
-		credTextShit = new Alphabet(0, 0, "ninjamuffin99\nPhantomArcade\nkawaisprite\nevilsk8er", true);
+		credTextShit = new Alphabet(0, 0, "og fnf Team\nkadedev and co\nand\npepperly", true);
 		credTextShit.screenCenter();
 
 		// credTextShit.alignment = CENTER;
@@ -287,13 +287,6 @@ class TitleState extends MusicBeatState
 
 		if (pressedEnter && !transitioning && skippedIntro)
 		{
-			#if !switch
-			NGio.unlockMedal(60960);
-
-			// If it's Friday according to da clock
-			if (Date.now().getDay() == 5)
-				NGio.unlockMedal(61034);
-			#end
 
 			if (FlxG.save.data.flashing)
 				titleText.animation.play('press');
@@ -306,6 +299,15 @@ class TitleState extends MusicBeatState
 
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
+				if (FlxG.save.data.savewarning == false)
+				{
+					FlxG.switchState(new OptionsNewFileWarning());
+				}
+				else 
+				{
+					FlxG.switchState(new MainMenuState());
+				}
+			/*
 				// Get current version of Kade Engine
 
 				//var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
@@ -335,6 +337,7 @@ class TitleState extends MusicBeatState
 				}
 				
 				http.request();
+				  */
 			});
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 		}
@@ -438,13 +441,13 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = "Friday";
 			// credTextShit.screenCenter();
 			case 13:
-				addMoreText('Friday');
+				addMoreText('Friday Night Funkin');
 			// credTextShit.visible = true;
 			case 14:
-				addMoreText('Night');
+				addMoreText('VS Perpa');
 			// credTextShit.text += '\nNight';
 			case 15:
-				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+				addMoreText('Mod By Pepperly'); // credTextShit.text += '\nFunkin';
 
 			case 16:
 				skipIntro();

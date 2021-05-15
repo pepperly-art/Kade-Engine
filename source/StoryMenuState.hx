@@ -25,8 +25,8 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Quarters', 'Pixels', 'Boba'],
-		['Quarters Rematch', 'Pixels Rematch', 'Boba Rematch'],
+		['Quarters', 'Pixels', 'Berserk Mode'],
+		['Quarters Rematch', 'Pixels Rematch', 'Berserk Mode Rematch'],
 	];
 	var curDifficulty:Int = 1;
 
@@ -372,6 +372,7 @@ class StoryMenuState extends MusicBeatState
 
 		for (i in stringThing)
 			txtTracklist.text += "\n" + i;
+		txtTracklist.text += "\n";
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 
 		txtTracklist.screenCenter(X);
