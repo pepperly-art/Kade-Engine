@@ -1,8 +1,10 @@
 bf
+bf-parappa
 dad
 gf
 spooky
 pico
+piconjo
 mom
 mom-car
 bf-car
@@ -10,9 +12,14 @@ parents-christmas
 monster-christmas
 bf-christmas
 gf-christmas
+gf-arcade
 monster
 bf-pixel
 senpai
 senpai-angry
+sempai-invert
+sempai-angry-invert
 spirit
 perpsona-boss
+sempai-invert
+sempai-angry-invert

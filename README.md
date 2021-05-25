@@ -1,3 +1,5 @@
+![Don't Look Over Here(https://file.toyhou.se/images/8770814_GV8CF5PkYSzAe5l.jpg)
+
 ![Kade Engine logo](https://user-images.githubusercontent.com/26305836/110529589-4b4eb600-80ce-11eb-9c44-e899118b0bf0.png)
 
 [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Windows?label=windows%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/build/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Macos?label=macOS%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/build/artifacts)  [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Linux?label=linux%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/build/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/daniel11420/KadeEngineWeb?label=html5&20build)](https://ci.appveyor.com/project/daniel11420/KadeEngineWeb) [![Discord](https://img.shields.io/discord/808039740464300104?label=discord)](https://discord.gg/MG6GQFh52U) [![GitHub issues](https://img.shields.io/github/issues/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/pulls) []() []()
@@ -9,45 +11,31 @@
 **Friday Night Funkin'** is a rhythm game originally made for Ludum Dare 47 "Stuck In a Loop".
 
 Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgrounds](https://www.newgrounds.com/portal/view/770371) ⋅ [source code on GitHub](https://github.com/ninjamuffin99/Funkin)**
-> Uh oh! Your tryin to kiss ur hot girlfriend, but her MEAN and EVIL dad is trying to KILL you! He's an ex-rockstar, the only way to get to his heart? The power of music... 
+> Uh oh! Your tryin to go on a DATE with your HOT GIRLFRIEND but some WEIRD FURRY is playing your favorite rhythm game (it's a shame you have bad taste, who likes Gitadora anymore). Time to do a duet with you on the vocals? Woo your girlfriend EVEN HARDER
 
 ## Kade Engine
 **Kade Engine** is a mod for Friday Night Funkin', including a full engine rework, replays, and more.
 
-Links: **[GameBanana mod page](https://gamebanana.com/gamefiles/16761) ⋅ [play in browser](https://funkin.puyo.xyz) ⋅ [latest stable release](https://github.com/KadeDev/Kade-Engine/releases/latest) ⋅ [latest development build (windows)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/build/artifacts) ⋅ [latest development build (macOS)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/build/artifacts) ⋅ [latest development build (linux)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/build/artifacts)**
-
-**REMEMBER**: This is a **mod**. This is not the vanilla game and should be treated as a **modification**. This is not and probably will never be official, so don't get confused.
+**REMEMBER**: This is a really stupid **mod**. Don't think too hard about it.
 
 ## Website ([KadeDev.github.io/kade-engine/](https://KadeDev.github.io/Kade-Engine/))
-If you're looking for documentation, changelogs, or guides, you can find those on the Kade Engine website.
 
-# Screenshots ([skip](#features))
+## The artist behind the mod ([https://pepperly.carrd.co/])(https://pepperly.carrd.co/)
 
-![Tutorial (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113989685-fa5aea80-9850-11eb-9180-f5819a774c79.gif) ![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113990845-2c208100-9852-11eb-8e6d-f1c9e8439871.gif)
 
-![Roses (Hard) on Upscroll](https://user-images.githubusercontent.com/15311104/113993573-e31dfc00-9854-11eb-82ae-1f29dc8a0b04.png)
+# WIP Screenshots ([skip](#features))
 
-![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113991654-f4660900-9852-11eb-8c3d-f3927571f19b.png)
+![Giant Girlfriend for no reason](https://cdn.discordapp.com/attachments/838432750700068910/846485969809047552/119403808-eb1ee780-bcac-11eb-91c6-81b12721eb03.png) ![Perpsona, Girlfriend on an Arcade Machine, and Boyfriend in casual cosplay of Parappa](https://cdn.discordapp.com/attachments/838432750700068910/846227188042432582/unknown.png)
 
-![He malding](https://user-images.githubusercontent.com/15311104/113993693-02b52480-9855-11eb-9975-eb8a7a1be8d1.png)
+![Boyfriend how does your mom let you have TWO GIRLFRIENDS](https://cdn.discordapp.com/attachments/838432750700068910/846452238602993684/unknown.png)
 
-![Free Play selection screen](https://i.imgur.com/LR0eWIC.png)
+![Perpsona in Motion](https://cdn.discordapp.com/attachments/628737288968470538/833851543417651280/ezgif-6-0307fde43622.gif)
 
-![Options Menu](https://i.imgur.com/LBXW9C1.png)
+![Free Play selection screen](https://64.media.tumblr.com/d2f1b156e7495c26aeeee64da0843ce6/a84aba314067835b-45/s500x750/4510918d09cfa247515dd5ce976a570adf20b956.jpg)
 
-# Features
+![Main Menu selection screen](https://64.media.tumblr.com/922eae5ed0a45095000c9de4868e418c/a84aba314067835b-7c/s500x750/a321b7d37fd047a0cb6ee6d420872c9e3ccdb802.jpg)
 
- - **New Input System**
-	 - An improved input system, similar to Quaver or Etterna, with less delays, less dropped inputs and other improvements.
- - **More information during gameplay**
-	 - While you're playing, we show you information about how you're doing, such as your accuracy, combo break count, notes per second, and your grade/rating.
- - **Better key layouts**
-	 - Instead of being forced to use WASD and the arrow keys, now you can play with DFJK!
- - **Replays** (in beta)
-	 - Have you ever gotten a crazy score but didn't record? The replay system solves that: it automatically saves a "replay" of your gameplay every time you complete a song, which you can play back inside of the game. 
-	 - Replays just store information about what you're doing, they don't actually record the screen -- so they take up way less space on your disk than videos.
- - **Audio offset**
-	 - If your headphones are delayed, you can set an offset in the options menu to line the game up with the delay and play with synced audio like intended.
+![Arcade](https://cdn.discordapp.com/attachments/838432750700068910/845492379631878144/unknown.png)
 
 # Credits
 ### Friday Night Funkin'

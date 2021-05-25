@@ -12,8 +12,8 @@
 	<SubTexture name="perpsona-boss down0009" x="621" y="2" width="557" height="568" frameX="-49" frameY="52" frameWidth="617" frameHeight="868"/>
 	<SubTexture name="perpsona-boss down0010" x="621" y="2" width="557" height="568" frameX="-49" frameY="52" frameWidth="617" frameHeight="868"/>
 	<SubTexture name="perpsona-boss down0011" x="621" y="2" width="557" height="568" frameX="-49" frameY="52" frameWidth="617" frameHeight="868"/>
-	<SubTexture name="perpsona-boss down0012" x="621" y="2" width="557" height="568" frameX="-49" frameY="52" frameWidth="617" frameHeight="868"/>
-	<SubTexture name="perpsona-boss down0013" x="621" y="2" width="557" height="568" frameX="-49" frameY="52" frameWidth="617" frameHeight="868"/>
+	<SubTexture name="perpsona-boss down0012" x="621" y="2" width="557" height="568" frameX="-49" frameY="52" frameWidth="617" frameHeight="868"
+	<SubTexture name="perpsona-boss down0013" x="621" y="2" width="557" height="568" frameX="-49" frameY="52" frameWidth="617" frameHeight="868"
 	<SubTexture name="perpsona-boss idle0000" x="1180" y="2" width="472" height="525" frameX="-77" frameY="-21" frameWidth="569" frameHeight="846"/>
 	<SubTexture name="perpsona-boss idle0001" x="1180" y="2" width="472" height="525" frameX="-77" frameY="-21" frameWidth="569" frameHeight="846"/>
 	<SubTexture name="perpsona-boss idle0002" x="1654" y="2" width="480" height="528" frameX="-69" frameY="-18" frameWidth="569" frameHeight="846"/>
