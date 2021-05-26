@@ -1,5 +1,6 @@
 package;
 
+import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
 import openfl.geom.Matrix;
 import openfl.display.BitmapData;
@@ -118,6 +119,8 @@ class PlayState extends MusicBeatState
 
 	public static var strumLineNotes:FlxTypedGroup<FlxSprite> = null;
 	public static var playerStrums:FlxTypedGroup<FlxSprite> = null;
+	public static var cpuStrums:FlxTypedGroup<FlxSprite> = null;
+
 
 	private var camZooming:Bool = false;
 	private var curSong:String = "";
@@ -306,7 +309,8 @@ class PlayState extends MusicBeatState
 		Conductor.changeBPM(SONG.bpm);
 
 		trace('INFORMATION ABOUT WHAT U PLAYIN WIT:\nFRAMES: ' + Conductor.safeFrames + '\nZONE: ' + Conductor.safeZoneOffset + '\nTS: ' + Conductor.timeScale + '\nBotPlay : ' + FlxG.save.data.botplay);
-		
+	
+		//dialogue shit		
 		switch (SONG.song.toLowerCase())
 		{
 			case 'tutorial':
@@ -320,7 +324,7 @@ class PlayState extends MusicBeatState
 				];
 			case 'fresh':
 				dialogue = ["Not too shabby boy.", ""];
-			case 'dadbattle':
+			case 'dad battle':
 				dialogue = [
 					"gah you think you're hot stuff?",
 					"If you can beat me here...",
@@ -870,6 +874,7 @@ class PlayState extends MusicBeatState
 		add(strumLineNotes);
 
 		playerStrums = new FlxTypedGroup<FlxSprite>();
+		cpuStrums = new FlxTypedGroup<FlxSprite>();
 
 		// startCountdown();
 
@@ -1592,14 +1597,22 @@ class PlayState extends MusicBeatState
 
 			babyArrow.ID = i;
 
-			if (player == 1)
+			switch (player)
 			{
-				playerStrums.add(babyArrow);
+				case 0:
+					cpuStrums.add(babyArrow);
+				case 1:
+					playerStrums.add(babyArrow);
 			}
 
 			babyArrow.animation.play('static');
 			babyArrow.x += 50;
 			babyArrow.x += ((FlxG.width / 2) * player);
+			
+			cpuStrums.forEach(function(spr:FlxSprite)
+			{					
+				spr.centerOffsets(); //CPU arrows start out slightly off-center
+			});
 
 			strumLineNotes.add(babyArrow);
 		}
@@ -1801,7 +1814,7 @@ class PlayState extends MusicBeatState
 			// 1 / 1000 chance for Gitaroo Man easter egg
 			if (FlxG.random.bool(0.1))
 			{
-				// gitaroo man easter egg
+				trace('GITAROO MAN EASTER EGG');
 				FlxG.switchState(new GitarooPause());
 			}
 			else
@@ -1853,20 +1866,32 @@ class PlayState extends MusicBeatState
 		/* if (FlxG.keys.justPressed.NINE)
 			FlxG.switchState(new Charting()); */
 
-		#if debug
-		if (FlxG.keys.justPressed.EIGHT)
-		{
-			FlxG.switchState(new AnimationDebug(SONG.player2));
-			#if windows
-			if (luaModchart != null)
+			#if debug
+			if (FlxG.keys.justPressed.EIGHT)
 			{
-				luaModchart.die();
-				luaModchart = null;
+				FlxG.switchState(new AnimationDebug(SONG.player2));
+				#if windows
+				if (luaModchart != null)
+				{
+					luaModchart.die();
+					luaModchart = null;
+				}
+				#end
 			}
+	
+			if (FlxG.keys.justPressed.ZERO)
+			{
+				FlxG.switchState(new AnimationDebug(SONG.player1));
+				#if windows
+				if (luaModchart != null)
+				{
+					luaModchart.die();
+					luaModchart = null;
+				}
+				#end
+			}
+	
 			#end
-		}
-		
-		#end
 
 		if (startingSong)
 		{
@@ -2141,6 +2166,29 @@ class PlayState extends MusicBeatState
 
 			// FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 		}
+		if (FlxG.save.data.resetButton)
+	   {
+		   if(FlxG.keys.justPressed.R)
+			   {
+				   boyfriend.stunned = true;
+
+				   persistentUpdate = false;
+				   persistentDraw = false;
+				   paused = true;
+	   
+				   vocals.stop();
+				   FlxG.sound.music.stop();
+	   
+				   openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+	   
+				   #if windows
+				   // Game Over doesn't get his own variable because it's only used here
+				   DiscordClient.changePresence("GAME OVER -- " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy),"\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
+				   #end
+	   
+				   // FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+			   }
+	   }
 
 		if (unspawnNotes[0] != null)
 		{
@@ -2264,6 +2312,25 @@ class PlayState extends MusicBeatState
 							case 0:
 								dad.playAnim('singLEFT' + altAnim, true);
 						}
+						
+						if (FlxG.save.data.cpuStrums)
+						{
+							cpuStrums.forEach(function(spr:FlxSprite)
+							{
+								if (Math.abs(daNote.noteData) == spr.ID)
+								{
+									spr.animation.play('confirm', true);
+								}
+								if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
+								{
+									spr.centerOffsets();
+									spr.offset.x -= 13;
+									spr.offset.y -= 13;
+								}
+								else
+									spr.centerOffsets();
+							});
+						}
 	
 						#if windows
 						if (luaModchart != null)
@@ -2335,10 +2402,21 @@ class PlayState extends MusicBeatState
 				});
 			}
 
-
-		if (!inCutscene)
-			keyShit();
-
+			if (FlxG.save.data.cpuStrums)
+				{
+					cpuStrums.forEach(function(spr:FlxSprite)
+					{
+						if (spr.animation.finished)
+						{
+							spr.animation.play('static');
+							spr.centerOffsets();
+						}
+					});
+				}
+		
+				if (!inCutscene)
+					keyShit();
+				
 
 		#if debug
 		if (FlxG.keys.justPressed.ONE)
@@ -3136,6 +3214,14 @@ class PlayState extends MusicBeatState
 
 					if(!loadRep && note.mustPress)
 						saveNotes.push(HelperFunctions.truncateFloat(note.strumTime, 2));
+					
+					playerStrums.forEach(function(spr:FlxSprite)
+					{
+						if (Math.abs(note.noteData) == spr.ID)
+						{
+							spr.animation.play('confirm', true);
+						}
+					});
 					
 					note.wasGoodHit = true;
 					vocals.volume = 1;

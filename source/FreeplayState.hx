@@ -76,7 +76,7 @@ class FreeplayState extends MusicBeatState
 
 		for (i in 0...songs.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
+			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false, true);
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
@@ -149,7 +149,7 @@ class FreeplayState extends MusicBeatState
 	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
 	{
 		if (songCharacters == null)
-			songCharacters = ['bf'];
+			songCharacters = ['dad'];
 
 		var num:Int = 0;
 		for (song in songs)

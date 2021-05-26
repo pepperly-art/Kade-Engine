@@ -41,7 +41,7 @@ class StoryMenuState extends MusicBeatState
 	var weekNames:Array<String> = [
 		"How to Funk",
 		"Battle at Pinball Poppy's",
-		"Thanks for Playing",
+		"RIP in Perparoonies",
 	];
 
 	var txtWeekTitle:FlxText;
