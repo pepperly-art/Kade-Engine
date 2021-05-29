@@ -184,7 +184,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'P_Left_DANCE', 24);
 
 				addOffset('idle');
-				addOffset("singUP", 222, 285);
+				addOffset("singUP", -8, 317);
 				addOffset("singRIGHT", -81, -6);
 				addOffset("singLEFT", 9, 16);
 				addOffset("singDOWN", -12, -12);
@@ -201,7 +201,6 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'perpsona-boss down', 24);
 				animation.addByPrefix('singLEFT', 'perpsona-boss left', 24);
 
-				// screams at offset
 				addOffset('idle', 0, 0);
 				addOffset("singUP", -3, 55);
 				addOffset("singRIGHT", 2, -42);
