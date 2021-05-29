@@ -25,8 +25,7 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Quarters', 'Pixels', 'Berserk Mode'],
-		['Quarters Rematch', 'Pixels Rematch', 'Berserk Mode Rematch'],
+		['Blammed', 'Pico', 'Philly Nice'],
 	];
 	var curDifficulty:Int = 1;
 
@@ -34,14 +33,12 @@ class StoryMenuState extends MusicBeatState
 
 	var weekCharacters:Array<Dynamic> = [
 		['', 'bf', 'gf'],
-		['perpsona-boss', 'bf', 'gf'],
-		['bf', 'perpsona-boss', 'gf'],
+		['piconjo', 'bf', 'gf'],
 	];
 
 	var weekNames:Array<String> = [
 		"How to Funk",
-		"Battle at Pinball Poppy's",
-		"RIP in Perparoonies",
+		"Piconjo <3s j00",
 	];
 
 	var txtWeekTitle:FlxText;

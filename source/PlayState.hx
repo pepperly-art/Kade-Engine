@@ -727,8 +727,6 @@ class PlayState extends MusicBeatState
 				gfVersion = 'gf-christmas';
 			case 'gf-pixel':
 				gfVersion = 'gf-pixel';
-			case 'gf-arcade':
-				gfVersion = 'gf-arcade';	
 			case 'gf':
 				gfVersion = 'gf';
 			default:
@@ -764,12 +762,9 @@ class PlayState extends MusicBeatState
 			case 'pico':
 				camPos.x += 600;
 				dad.y += 300;
-			case 'perpsona-boss':
-				dad.y += 230;
-				dad.x -= 125;
 			case 'piconjo':
 				dad.y += 115;
-				dad.x -= 150;
+				dad.x += 150;
 			case 'parents-christmas':
 				dad.x -= 500;
 			case 'senpai':
@@ -2055,8 +2050,6 @@ class PlayState extends MusicBeatState
 				{
 					case 'mom':
 						camFollow.y = dad.getMidpoint().y;
-					case 'perpsona-boss':
-						camFollow.y = dad.getMidpoint().y + 1000;
 					case 'senpai':
 						camFollow.y = dad.getMidpoint().y - 430;
 						camFollow.x = dad.getMidpoint().x - 100;

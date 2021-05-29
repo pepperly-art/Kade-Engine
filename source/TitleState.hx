@@ -450,7 +450,7 @@ class TitleState extends MusicBeatState
 				addMoreText('Friday Night Funkin');
 			// credTextShit.visible = true;
 			case 14:
-				addMoreText('VS Perpa');
+				addMoreText('VS Piconjo');
 			// credTextShit.text += '\nNight';
 			case 15:
 				addMoreText('Mod By Pepperly'); // credTextShit.text += '\nFunkin';

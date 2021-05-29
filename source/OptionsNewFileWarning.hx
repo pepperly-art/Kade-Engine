@@ -21,9 +21,10 @@ class OptionsNewFileWarning extends MusicBeatState
 		add(bg);
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
 			"Check your Options before you jump in!
-			\nVS Perpa has its own save file!\nIt's worth it to not have to overwrite your high scores, right?
+			\nVS Piconjo has its own save file!\nIt's worth it to not have to overwrite your high scores, right?
             \nThis'll be your only warning,\nso be sure to check yourself before you wreck yourself!
-			\nThanks for playing!",
+			\nThanks for playing!
+			\n~Pepperly",
 			32);
 
 

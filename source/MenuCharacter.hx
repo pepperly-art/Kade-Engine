@@ -30,9 +30,7 @@ class MenuCharacter extends FlxSprite
 		'mom' => new CharacterSetting(-30, 140, 0.85),
 		'parents-christmas' => new CharacterSetting(100, 130, 1.8),
 		'senpai' => new CharacterSetting(-40, -45, 1.4),
-		'perpsona-boss' => new CharacterSetting(0, 50, 1.5),
-		'bf-boss' => new CharacterSetting(0, 0, 1.5),
-		'perpsona-play'=> new CharacterSetting(0, 0, 0.5) //gonna have to make sure my lines are tiny? not sure what my problem is rn
+		'piconjo' => new CharacterSetting(0, 0, 0.8),
 	];
 
 	private var flipped:Bool = false;
@@ -45,7 +43,6 @@ class MenuCharacter extends FlxSprite
 		antialiasing = true;
 
 		frames = Paths.getSparrowAtlas('campaign_menu_UI_characters');
-
 		animation.addByPrefix('bf', "BF idle dance white", 24);
 		animation.addByPrefix('bfConfirm', 'BF HEY!!', 24, false);
 		animation.addByPrefix('gf', "GF Dancing Beat WHITE", 24);
@@ -53,11 +50,9 @@ class MenuCharacter extends FlxSprite
 		animation.addByPrefix('spooky', "spooky dance idle BLACK LINES", 24);
 		animation.addByPrefix('pico', "Pico Idle Dance", 24);
 		animation.addByPrefix('mom', "Mom Idle BLACK LINES", 24);
-		animation.addByPrefix('parents-christmas', "Parent Christmas Idle", 24);
+		animation.addByPrefix('parents-christmas', "Parent Christmas Idle Black Lines", 24);
 		animation.addByPrefix('senpai', "SENPAI idle Black Lines", 24);
-		animation.addByPrefix('perpsona-boss', "perpsona-boss idle BLACK LINES", 24);
-		animation.addByPrefix('perpsona-play', "perpsona-boss idle BLACK LINES", 24);
-		animation.addByPrefix('bf-boss', "BF idle dance white", 24);
+		animation.addByPrefix('piconjo', "P_Idle_DANCE LINES", 24);
 
 		setGraphicSize(Std.int(width * scale));
 		updateHitbox();
