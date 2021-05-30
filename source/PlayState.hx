@@ -367,7 +367,7 @@ class PlayState extends MusicBeatState
 
 					var city:FlxSprite = new FlxSprite(-10).loadGraphic(Paths.image('philly/city', 'week3'));
 					city.scrollFactor.set(0.3, 0.3);
-					city.setGraphicSize(Std.int(city.width * 0.85));
+					city.setGraphicSize(Std.int(city.width * 0.9));
 					city.updateHitbox();
 					add(city);
 
@@ -381,7 +381,7 @@ class PlayState extends MusicBeatState
 							var light:FlxSprite = new FlxSprite(city.x).loadGraphic(Paths.image('philly/win' + i, 'week3'));
 							light.scrollFactor.set(0.3, 0.3);
 							light.visible = false;
-							light.setGraphicSize(Std.int(light.width * 0.85));
+							light.setGraphicSize(Std.int(light.width * 0.9));
 							light.updateHitbox();
 							light.antialiasing = true;
 							phillyCityLights.add(light);
@@ -395,7 +395,7 @@ class PlayState extends MusicBeatState
 						add(phillyTrain);
 					}
 
-					trainSound = new FlxSound().loadEmbedded(Paths.sound('train_passes','week3'));
+					trainSound = new FlxSound().loadEmbedded(Paths.sound('train_passes','shared'));
 					FlxG.sound.list.add(trainSound);
 
 					// var cityLights:FlxSprite = new FlxSprite().loadGraphic(AssetPaths.win0.png);
@@ -763,7 +763,8 @@ class PlayState extends MusicBeatState
 				camPos.x += 600;
 				dad.y += 300;
 			case 'piconjo':
-				dad.y += 115;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y -100);
+				dad.y += 100;
 				dad.x += 150;
 			case 'parents-christmas':
 				dad.x -= 500;
@@ -2049,6 +2050,8 @@ class PlayState extends MusicBeatState
 				switch (dad.curCharacter)
 				{
 					case 'mom':
+						camFollow.y = dad.getMidpoint().y;
+					case 'piconjo':
 						camFollow.y = dad.getMidpoint().y;
 					case 'senpai':
 						camFollow.y = dad.getMidpoint().y - 430;

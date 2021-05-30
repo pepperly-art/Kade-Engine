@@ -147,7 +147,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('idle', 'P_Idle_DANCE', 24);
 				animation.addByPrefix('singUP', 'P_Up_DANCE', 24);
 				animation.addByPrefix('singRIGHT', 'P_Right_DANCE', 24);
-				animation.addByPrefix('singDOWN', 'P_Down_Dance', 24);
+				animation.addByPrefix('singDOWN', 'P_Down_DANCE', 24);
 				animation.addByPrefix('singLEFT', 'P_Left_DANCE', 24);
 
 				// addOffset('idle',);
@@ -158,9 +158,9 @@ class Character extends FlxSprite
 				
 				addOffset('idle', 50, 0);
 				addOffset("singUP", 42, 317);
-				addOffset("singRIGHT", -31, -6);
-				addOffset("singLEFT", 59, 16);
-				addOffset("singDOWN", 38, -12);
+				addOffset("singRIGHT", 29, -38);
+				addOffset("singLEFT", 77, 22);
+				addOffset("singDOWN", -14, -54);
 
 				playAnim('idle');
 	
