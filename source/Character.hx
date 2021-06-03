@@ -144,6 +144,25 @@ class Character extends FlxSprite
 			case 'piconjo':
 				tex = Paths.getSparrowAtlas('characters/Piconjo');
 				frames = tex;
+				animation.addByPrefix('idle', 'Piconjo_idle', 24);
+				animation.addByPrefix('singUP', 'Piconjo_UP_DANCE', 24);
+				animation.addByPrefix('singRIGHT', 'Piconjo_RIGHT_DANCE', 24);
+				animation.addByPrefix('singDOWN', 'Piconjo_DOWN_DANCE', 24);
+				animation.addByPrefix('singLEFT', 'Piconjo_LEFT_DANCE', 24);
+				animation.addByPrefix('singSMOOCH', 'Piconjo_SMOOCH', 24);
+		
+				addOffset('idle', 0, 0);
+				addOffset("singUP", 78, 13);
+				addOffset("singRIGHT", -26, -16);
+				addOffset("singLEFT", 45, 16);
+				addOffset("singDOWN", 35, -92);
+				addOffset("singSMOOCH", -3, 7);
+
+				playAnim('idle');
+
+			case 'piconjo-v':
+				tex = Paths.getSparrowAtlas('characters/Piconjo-v');
+				frames = tex;
 				animation.addByPrefix('idle', 'P_Idle_DANCE', 24);
 				animation.addByPrefix('singUP', 'P_Up_DANCE', 24);
 				animation.addByPrefix('singRIGHT', 'P_Right_DANCE', 24);

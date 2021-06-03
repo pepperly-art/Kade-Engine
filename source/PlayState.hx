@@ -765,6 +765,10 @@ class PlayState extends MusicBeatState
 			case 'piconjo':
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y -100);
 				dad.y += 100;
+				dad.x += 104;
+			case 'piconjo-v':
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y -100);
+				dad.y += 10;
 				dad.x += 150;
 			case 'parents-christmas':
 				dad.x -= 500;
@@ -773,14 +777,6 @@ class PlayState extends MusicBeatState
 				dad.y += 360;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'senpai-angry':
-				dad.x += 150;
-				dad.y += 360;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-			case 'sempai-invert':
-				dad.x += 150;
-				dad.y += 360;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-			case 'sempai-angry-invert':
 				dad.x += 150;
 				dad.y += 360;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
@@ -1974,6 +1970,9 @@ class PlayState extends MusicBeatState
 						}
 						case 'Blammed':
 						{
+						//	if(curBeat)
+
+
 							if(curBeat > 30 && curBeat < 190)
 							{
 								if(curBeat < 90 || curBeat > 128)
@@ -2052,6 +2051,8 @@ class PlayState extends MusicBeatState
 					case 'mom':
 						camFollow.y = dad.getMidpoint().y;
 					case 'piconjo':
+						camFollow.y = dad.getMidpoint().y;
+					case 'piconjo-v':
 						camFollow.y = dad.getMidpoint().y;
 					case 'senpai':
 						camFollow.y = dad.getMidpoint().y - 430;
@@ -3387,6 +3388,13 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
+		if (curSong == 'Tutorial' && dad.curCharacter == 'gf') {
+			if (curBeat % 2 == 1 && dad.animOffsets.exists('danceLeft'))
+				dad.playAnim('danceLeft');
+			if (curBeat % 2 == 0 && dad.animOffsets.exists('danceRight'))
+				dad.playAnim('danceRight');
+		}
+
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
 		{
 			if (SONG.notes[Math.floor(curStep / 16)].changeBPM)
@@ -3398,7 +3406,7 @@ class PlayState extends MusicBeatState
 			// Conductor.changeBPM(SONG.bpm);
 
 			// Dad doesnt interupt his own notes
-			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
+			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection && dad.curCharacter != 'gf' && !dad.animation.curAnim.name.startsWith("sing"))
 				dad.dance();
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
@@ -3438,6 +3446,19 @@ class PlayState extends MusicBeatState
 			dad.dance();
 		}
 
+		if (curSong == 'Blammed' && dad.curCharacter == 'piconjo')  
+			{
+				switch (curBeat)
+				{
+					case 8:
+					  dad.playAnim('singSMOOCH', true);
+					case 11:
+					  boyfriend.playAnim('hey', true);
+					
+				 }
+			}
+
+
 		if (curBeat % 8 == 7 && curSong == 'Bopeebo')
 		{
 			boyfriend.playAnim('hey', true);
@@ -3448,7 +3469,7 @@ class PlayState extends MusicBeatState
 				boyfriend.playAnim('hey', true);
 				dad.playAnim('cheer', true);
 			}
-
+			
 		switch (curStage)
 		{
 			case 'school':

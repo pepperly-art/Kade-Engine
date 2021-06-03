@@ -145,7 +145,7 @@ class GameplayCustomizeState extends MusicBeatState
         super.beatHit();
 
         bf.playAnim('idle');
-        dad.dance();
+        //dad.dance();
 
         FlxG.camera.zoom += 0.015;
         camHUD.zoom += 0.010;

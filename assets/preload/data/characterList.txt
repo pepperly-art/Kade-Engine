@@ -4,6 +4,7 @@ gf
 spooky
 pico
 piconjo
+piconjo-v
 mom
 mom-car
 bf-car

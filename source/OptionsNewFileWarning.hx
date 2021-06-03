@@ -15,7 +15,7 @@ class OptionsNewFileWarning extends MusicBeatState
 
         super.create();
 		//var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BROWN);
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('week54prototype', 'shared'));
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('stageback', 'shared'));
 		bg.scale.x *= 1.55;
 		bg.scale.y *= 1.55;
 		add(bg);
