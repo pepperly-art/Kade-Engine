@@ -25,23 +25,20 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Quarters', 'Pixels', 'Berserk Mode'],
-		['Quarters Rematch', 'Pixels Rematch', 'Berserk Mode Rematch'],
+		['Piconjo Never Dies']
 	];
 	var curDifficulty:Int = 1;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, false];
+	public static var weekUnlocked:Array<Bool> = [true, true];
 
 	var weekCharacters:Array<Dynamic> = [
 		['', 'bf', 'gf'],
-		['perpsona-boss', 'bf', 'gf'],
-		['bf', 'perpsona-boss', 'gf'],
+		['piconjo', 'bf', 'gf']
 	];
 
 	var weekNames:Array<String> = [
-		"How to Funk",
-		"Battle at Pinball Poppy's",
-		"RIP in Perparoonies",
+		"",
+		"Piconjo <3s j00",
 	];
 
 	var txtWeekTitle:FlxText;
@@ -372,11 +369,13 @@ class StoryMenuState extends MusicBeatState
 
 		for (i in stringThing)
 			txtTracklist.text += "\n" + i;
-		txtTracklist.text += "\n";
+
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 
 		txtTracklist.screenCenter(X);
 		txtTracklist.x -= FlxG.width * 0.35;
+
+		txtTracklist.text += "\n";
 
 		#if !switch
 		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty);

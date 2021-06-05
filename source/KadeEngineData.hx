@@ -5,6 +5,9 @@ class KadeEngineData
 {
     public static function initSave()
     {
+        if (FlxG.save.data.savewarning == null)
+			FlxG.save.data.savewarning = false;
+		
         if (FlxG.save.data.newInput == null)
 			FlxG.save.data.newInput = true;
 
@@ -72,9 +75,6 @@ class KadeEngineData
 		if (FlxG.save.data.botplay == null)
 			FlxG.save.data.botplay = false;
 
-		if (FlxG.save.data.savewarning == null)
-			FlxG.save.data.savewarning = false;
-		
 		if (FlxG.save.data.cpuStrums == null)
 			FlxG.save.data.cpuStrums = false;
 

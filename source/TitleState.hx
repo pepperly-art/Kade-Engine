@@ -88,7 +88,7 @@ class TitleState extends MusicBeatState
 		trace('NEWGROUNDS LOL');
 		#end
 
-		FlxG.save.bind('funkin', 'pepperly');
+		FlxG.save.bind('funkin', 'vsPiconjo');
 
 		KadeEngineData.initSave();
 
@@ -172,7 +172,7 @@ class TitleState extends MusicBeatState
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
 
-		gfDance = new FlxSprite(FlxG.width * 0.5, FlxG.height * 0.07);
+		gfDance = new FlxSprite(FlxG.width * 0.6, FlxG.height * 0.07);
 		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
@@ -208,7 +208,7 @@ class TitleState extends MusicBeatState
 		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		credGroup.add(blackScreen);
 
-		credTextShit = new Alphabet(0, 0, "og fnf Team\nkadedev and co\nand\npepperly", true);
+		credTextShit = new Alphabet(0, 0, "og fnf Team\nkadedev and co\npepperly\npiconjo", true);
 		credTextShit.screenCenter();
 
 		// credTextShit.alignment = CENTER;
@@ -315,7 +315,7 @@ class TitleState extends MusicBeatState
 				}
 			/*
 				// Get current version of Kade Engine
-
+				
 				//var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
 				var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/patchnotes/version.downloadMe");
 				var returnedData:Array<String> = [];
@@ -450,7 +450,7 @@ class TitleState extends MusicBeatState
 				addMoreText('Friday Night Funkin');
 			// credTextShit.visible = true;
 			case 14:
-				addMoreText('VS Perpa');
+				addMoreText('VS Piconjo');
 			// credTextShit.text += '\nNight';
 			case 15:
 				addMoreText('Mod By Pepperly'); // credTextShit.text += '\nFunkin';

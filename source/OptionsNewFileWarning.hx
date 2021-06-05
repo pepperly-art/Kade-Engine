@@ -15,18 +15,17 @@ class OptionsNewFileWarning extends MusicBeatState
 
         super.create();
 		//var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BROWN);
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('week54prototype', 'shared'));
-		bg.scale.x *= 1.55;
-		bg.scale.y *= 1.55;
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGMagenta'));
 		add(bg);
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
 			"Check your Options before you jump in!
-			\nVS Perpa has its own save file!\nIt's worth it to not have to overwrite your high scores, right?
+			\nVS Piconjo has its own save file!\nIt's worth it to not have to overwrite your high scores, right?
             \nThis'll be your only warning,\nso be sure to check yourself before you wreck yourself!
-			\nThanks for playing!",
+			\nThanks for playing! 
+			\n ~Pepperly",
 			32);
 
-
+			
 			txt.setFormat("VCR OSD Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
 			txt.borderColor = FlxColor.BLACK;
 			txt.borderSize = 3;

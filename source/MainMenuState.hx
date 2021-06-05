@@ -162,16 +162,16 @@ class MainMenuState extends MusicBeatState
 
 			if (controls.ACCEPT)
 			{
-				if (optionShit[curSelected] == 'donate')
+				/* if (optionShit[curSelected] == 'donate')
 				{
 					#if linux
-					Sys.command('/usr/bin/xdg-open', ["https://pepperly.carrd.co/", "&"]);
+					Sys.command('/usr/bin/xdg-open', ["https://www.kickstarter.com/projects/funkin/friday-night-funkin-the-full-ass-game", "&"]);
 					#else
-					FlxG.openURL('https://pepperly.carrd.co/');
+					FlxG.openURL('https://www.kickstarter.com/projects/funkin/friday-night-funkin-the-full-ass-game');
 					#end
 				}
 				else
-				{
+				{ */
 					selectedSomethin = true;
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 					
@@ -208,7 +208,7 @@ class MainMenuState extends MusicBeatState
 							}
 						}
 					});
-				}
+				//}
 			}
 		}
 
@@ -233,7 +233,10 @@ class MainMenuState extends MusicBeatState
 				FlxG.switchState(new FreeplayState());
 
 				trace("Freeplay Menu Selected");
-
+			case 'donate':
+					FlxG.switchState(new MessageState());
+	
+					trace("Credits Selected");
 			case 'options':
 				FlxG.switchState(new OptionsMenu());
 		}
