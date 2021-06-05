@@ -124,7 +124,7 @@ class Character extends FlxSprite
 
 			case 'dad':
 				// DAD ANIMATION LOADING CODE
-				tex = Paths.getSparrowAtlas('characters/DADDY_DEAREST');
+				tex = Paths.getSparrowAtlas('characters/DADDY_DEAREST', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'Dad idle dance', 24);
 				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24);
@@ -266,6 +266,7 @@ class Character extends FlxSprite
 
 				flipX = true;
 
+
 				case 'piconjo':
 					tex = Paths.getSparrowAtlas('characters/Piconjo');
 					frames = tex;
@@ -275,9 +276,6 @@ class Character extends FlxSprite
 					animation.addByPrefix('singDOWN', 'Piconjo_DOWN_DANCE', 24);
 					animation.addByPrefix('singLEFT', 'Piconjo_LEFT_DANCE', 24);
 					animation.addByPrefix('singSMOOCH', 'Piconjo_SMOOCH', 24);
-					animation.addByIndices('hackSmoocha', 'Piconjo_SMOOCH', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-					animation.addByIndices('hackSmoochb', 'Piconjo_SMOOCH', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,], "", 24, false);
-			
 					addOffset('idle', 0, 0);
 					addOffset("singUP", 78, 13);
 					addOffset("singRIGHT", -26, -16);
@@ -305,9 +303,13 @@ class Character extends FlxSprite
 	
 					playAnim('idle');
 
+
 			case 'bf':
-				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND');
+				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
 				frames = tex;
+
+				trace(tex.frames.length);
+
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
 				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
@@ -468,6 +470,7 @@ class Character extends FlxSprite
 				updateHitbox();
 
 				antialiasing = false;
+
 			case 'senpai-angry':
 				frames = Paths.getSparrowAtlas('characters/senpai');
 				animation.addByPrefix('idle', 'Angry Senpai Idle', 24, false);
@@ -576,6 +579,7 @@ class Character extends FlxSprite
 				dadVar = 6.1;
 			if (holdTimer >= Conductor.stepCrochet * dadVar * 0.001)
 			{
+				trace('dance');
 				dance();
 				holdTimer = 0;
 			}

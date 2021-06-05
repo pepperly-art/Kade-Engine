@@ -35,9 +35,9 @@ class MessageState extends MusicBeatState
         var txt:FlxText = new FlxText(0, 0, FlxG.width,
             "Piconjo Never Dies song & Piconjo character \nby Piconjo @ Newgrounds & Patreon
             \nMod & Art \nby Pepperly @ Newgrounds, tumblr, caard \nand pepperly_art @ twitter
+            \nMenu song: Fight Them Until We Cant \nby Zander Noriega @ opengameart
             \nSpecial thanks to \nFriday Night Funkin OG Team \nKadeDev & co
-            >>> Newgrounds <<<
-            and many tutorials on Gamebanana",
+            >>> Newgrounds <<<",
             32);
 
 			txt.setFormat("VCR OSD Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);

@@ -1,6 +1,8 @@
 // this file is for modchart things, this is to declutter playstate.hx
 
 // Lua
+import flixel.graphics.FlxGraphic;
+import flixel.graphics.frames.FlxAtlasFrames;
 #if windows
 import flixel.tweens.FlxEase;
 import openfl.filters.ShaderFilter;
@@ -250,6 +252,33 @@ class ModchartState
 					PlayState.instance.iconP2.animation.play(id);
 	}
 
+	function makeAnimatedLuaSprite(spritePath:String,names:Array<String>,prefixes:Array<String>,startAnim:String, id:String)
+	{
+		#if sys
+		var data:BitmapData = BitmapData.fromFile(Sys.getCwd() + "assets/data/" + PlayState.SONG.song.toLowerCase() + '/' + spritePath + ".png");
+
+		var sprite:FlxSprite = new FlxSprite(0,0);
+
+		sprite.frames = FlxAtlasFrames.fromSparrow(FlxGraphic.fromBitmapData(data), Sys.getCwd() + "assets/data/" + PlayState.SONG.song.toLowerCase() + "/" + spritePath + ".xml");
+
+		trace(sprite.frames.frames.length);
+
+		for (p in 0...names.length)
+		{
+			var i = names[p];
+			var ii = prefixes[p];
+			sprite.animation.addByPrefix(i,ii,24,false);
+		}
+
+		luaSprites.set(id,sprite);
+
+        PlayState.instance.addObject(sprite);
+
+		sprite.animation.play(startAnim);
+		return id;
+		#end
+	}
+
 	function makeLuaSprite(spritePath:String,toBeCalled:String, drawBehind:Bool)
 	{
 		#if sys
@@ -353,6 +382,8 @@ class ModchartState
 	
 				setVar("screenWidth",FlxG.width);
 				setVar("screenHeight",FlxG.height);
+				setVar("windowWidth",FlxG.width);
+				setVar("windowHeight",FlxG.height);
 				setVar("hudWidth", PlayState.instance.camHUD.width);
 				setVar("hudHeight", PlayState.instance.camHUD.height);
 	
@@ -371,6 +402,9 @@ class ModchartState
 				Lua_helper.add_callback(lua,"changeBoyfriendCharacter", changeBoyfriendCharacter);
 	
 				Lua_helper.add_callback(lua,"getProperty", getPropertyByName);
+				
+				// Lua_helper.add_callback(lua,"makeAnimatedSprite", makeAnimatedLuaSprite);
+				// this one is still in development
 
 				Lua_helper.add_callback(lua,"destroySprite", function(id:String) {
 					var sprite = luaSprites.get(id);
@@ -379,6 +413,8 @@ class ModchartState
 					PlayState.instance.removeObject(sprite);
 					return true;
 				});
+
+				
 	
 				// hud/camera
 	
@@ -605,11 +641,19 @@ class ModchartState
 				});
 				
 				Lua_helper.add_callback(lua,"getScreenWidth",function() {
-					return Application.current.window.displayMode.width;
+					return Application.current.window.display.currentMode.width;
 				});
 
 				Lua_helper.add_callback(lua,"getScreenHeight",function() {
-					return Application.current.window.displayMode.height;
+					return Application.current.window.display.currentMode.height;
+				});
+
+				Lua_helper.add_callback(lua,"getWindowWidth",function() {
+					return Application.current.window.width;
+				});
+
+				Lua_helper.add_callback(lua,"getWindowHeight",function() {
+					return Application.current.window.height;
 				});
 
 	
@@ -742,24 +786,21 @@ class ModchartState
 				Lua_helper.add_callback(lua,"tweenFadeOut", function(id:String, toAlpha:Float, time:Float, onComplete:String) {
 					FlxTween.tween(getActorByName(id), {alpha: toAlpha}, time, {ease: FlxEase.circOut, onComplete: function(flxTween:FlxTween) { if (onComplete != '' && onComplete != null) {callLua(onComplete,[id]);}}});
 				});
-//forgot and accidentally commit to master branch
+
+				//forgot and accidentally commit to master branch
 				// shader
 				
 				/*Lua_helper.add_callback(lua,"createShader", function(frag:String,vert:String) {
 					var shader:LuaShader = new LuaShader(frag,vert);
-
 					trace(shader.glFragmentSource);
-
 					shaders.push(shader);
 					// if theres 1 shader we want to say theres 0 since 0 index and length returns a 1 index.
 					return shaders.length == 1 ? 0 : shaders.length;
 				});
-
 				
 				Lua_helper.add_callback(lua,"setFilterHud", function(shaderIndex:Int) {
 					PlayState.instance.camHUD.setFilters([new ShaderFilter(shaders[shaderIndex])]);
 				});
-
 				Lua_helper.add_callback(lua,"setFilterCam", function(shaderIndex:Int) {
 					FlxG.camera.setFilters([new ShaderFilter(shaders[shaderIndex])]);
 				});*/
