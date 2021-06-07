@@ -266,7 +266,6 @@ class Character extends FlxSprite
 
 				flipX = true;
 
-
 				case 'piconjo':
 					tex = Paths.getSparrowAtlas('characters/Piconjo');
 					frames = tex;
@@ -470,7 +469,6 @@ class Character extends FlxSprite
 				updateHitbox();
 
 				antialiasing = false;
-
 			case 'senpai-angry':
 				frames = Paths.getSparrowAtlas('characters/senpai');
 				animation.addByPrefix('idle', 'Angry Senpai Idle', 24, false);

@@ -697,8 +697,10 @@ class PlayState extends MusicBeatState
 					var portal:FlxSprite = new FlxSprite(-530, -100);
 					portal.frames = Paths.getSparrowAtlas('portal');
 					portal.animation.addByPrefix('idle', 'portal', 24);
-					portal.animation.play('idle');
-					//var portal:FlxSprite = new FlxSprite(-530, -100).loadGraphic(Paths.image('portal1'));
+					if(FlxG.save.data.distractions){
+						portal.animation.play('idle');
+					
+						//var portal:FlxSprite = new FlxSprite(-530, -100).loadGraphic(Paths.image('portal1'));
 					portal.antialiasing = true;
 					portal.setGraphicSize(Std.int(portal.width * 0.6));
 					add(portal);
@@ -869,6 +871,7 @@ class PlayState extends MusicBeatState
 				add(evilTrail);
 				// evilTrail.scrollFactor.set(1.1, 1.1);
 				}
+
 
 				boyfriend.x += 200;
 				boyfriend.y += 220;
@@ -1415,6 +1418,8 @@ class PlayState extends MusicBeatState
 		else
 			vocals = new FlxSound();
 
+		trace('loaded vocals');
+
 		FlxG.sound.list.add(vocals);
 
 		notes = new FlxTypedGroup<Note>();
@@ -1429,7 +1434,7 @@ class PlayState extends MusicBeatState
 
 		// Per song offset check
 		#if windows
-			var songPath = 'assets/data/' + PlayState.SONG.song.toLowerCase() + '/';
+			var songPath = 'assets/data/' + StringTools.replace(PlayState.SONG.song," ", "-").toLowerCase() + '/';
 			for(file in sys.FileSystem.readDirectory(songPath))
 			{
 				var path = haxe.io.Path.join([songPath, file]);
@@ -2790,14 +2795,8 @@ class PlayState extends MusicBeatState
 	
 			var comboSplit:Array<String> = (combo + "").split('');
 
-			// make sure we have 3 digits to display (looks weird otherwise lol)
-			if (comboSplit.length == 1)
-				{
-					seperatedScore.push(0);
-					seperatedScore.push(0);
-				}
-				else if (comboSplit.length == 2)
-					seperatedScore.push(0);
+			if (comboSplit.length == 2)
+				seperatedScore.push(0); // make sure theres a 0 in front or it looks weird lol!
 
 			for(i in 0...comboSplit.length)
 			{
@@ -2829,7 +2828,8 @@ class PlayState extends MusicBeatState
 				numScore.velocity.y -= FlxG.random.int(140, 160);
 				numScore.velocity.x = FlxG.random.float(-5, 5);
 	
-				add(numScore);
+				if (combo >= 10 || combo == 0)
+					add(numScore);
 	
 				FlxTween.tween(numScore, {alpha: 0}, 0.2, {
 					onComplete: function(tween:FlxTween)
