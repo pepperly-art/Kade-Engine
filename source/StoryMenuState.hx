@@ -28,7 +28,7 @@ class StoryMenuState extends MusicBeatState
 		['Piconjo Never Dies']
 /*		['Bopeebo', 'Fresh', 'Dad Battle'],
 		['Spookeez', 'South', "Monster"],
-		['Pico', 'Philly Nice', "Blammed"],
+		['Pico', 'Philly', "Blammed"],
 		['Satin Panties', "High", "Milf"],
 		['Cocoa', 'Eggnog', 'Winter Horrorland'],
 		['Senpai', 'Roses', 'Thorns'] */

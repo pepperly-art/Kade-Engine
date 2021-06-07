@@ -36,8 +36,7 @@ class MessageState extends MusicBeatState
             "Piconjo Never Dies song & Piconjo character \nby Piconjo @ Newgrounds & Patreon
             \nMod & Art \nby Pepperly @ Newgrounds, tumblr, caard \nand pepperly_art @ twitter
             \nMenu song: Fight Them Until We Cant \nby Zander Noriega @ opengameart
-            \nSpecial thanks to \nFriday Night Funkin OG Team \nKadeDev & co
-            >>> Newgrounds <<<",
+            \nSpecial thanks to \nFriday Night Funkin OG Team \nKadeDev & co \n & Newgrounds",
             32);
 
 			txt.setFormat("VCR OSD Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);

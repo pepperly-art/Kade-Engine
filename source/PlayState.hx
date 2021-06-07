@@ -699,7 +699,7 @@ class PlayState extends MusicBeatState
 					portal.animation.addByPrefix('idle', 'portal', 24);
 					if(FlxG.save.data.distractions){
 						portal.animation.play('idle');
-					
+					}
 						//var portal:FlxSprite = new FlxSprite(-530, -100).loadGraphic(Paths.image('portal1'));
 					portal.antialiasing = true;
 					portal.setGraphicSize(Std.int(portal.width * 0.6));
