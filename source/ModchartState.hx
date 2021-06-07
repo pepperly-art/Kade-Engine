@@ -792,15 +792,19 @@ class ModchartState
 				
 				/*Lua_helper.add_callback(lua,"createShader", function(frag:String,vert:String) {
 					var shader:LuaShader = new LuaShader(frag,vert);
+
 					trace(shader.glFragmentSource);
+
 					shaders.push(shader);
 					// if theres 1 shader we want to say theres 0 since 0 index and length returns a 1 index.
 					return shaders.length == 1 ? 0 : shaders.length;
 				});
+
 				
 				Lua_helper.add_callback(lua,"setFilterHud", function(shaderIndex:Int) {
 					PlayState.instance.camHUD.setFilters([new ShaderFilter(shaders[shaderIndex])]);
 				});
+
 				Lua_helper.add_callback(lua,"setFilterCam", function(shaderIndex:Int) {
 					FlxG.camera.setFilters([new ShaderFilter(shaders[shaderIndex])]);
 				});*/

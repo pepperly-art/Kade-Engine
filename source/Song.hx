@@ -46,8 +46,6 @@ class Song
 
 	public static function loadFromJson(jsonInput:String, ?folder:String):SwagSong
 	{
-		trace('loading ' + folder.toLowerCase() + '/' + jsonInput.toLowerCase());
-
 		var rawJson = Assets.getText(Paths.json(folder.toLowerCase() + '/' + jsonInput.toLowerCase())).trim();
 
 		while (!rawJson.endsWith("}"))
@@ -67,6 +65,7 @@ class Song
 				trace('LOADED FROM JSON: ' + songData.notes[i].sectionNotes);
 				// songData.notes[i].sectionNotes = songData.notes[i].sectionNotes
 			}
+
 				daNotes = songData.notes;
 				daSong = songData.song;
 				daBpm = songData.bpm; */

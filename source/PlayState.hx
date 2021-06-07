@@ -661,6 +661,57 @@ class PlayState extends MusicBeatState
 								add(waveSpriteFG);
 						*/
 			}
+
+			case 'tehpr0tal':
+				{
+					
+					defaultCamZoom = 0.75;
+
+					// -x = left, + x = right, 
+					// -y = up, + y is down
+					// not sure where the starting position is
+					// thankfully it seems the graphic size doesn't effect the position math at all
+					// so it's possible to use the information tab w/ the selection tool  in CSP to find 
+					// what pixels you need to move where.
+
+					curStage = 'tehpr0tal';
+					var bg:FlxSprite = new FlxSprite(-300, -520).loadGraphic(Paths.image('portalBG'));
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.1, 0.2);
+					bg.active = false;
+					bg.setGraphicSize(Std.int(bg.width * 0.75));
+					bg.updateHitbox();
+					add(bg);
+
+					var midg:FlxSprite = new FlxSprite(-610, 280).loadGraphic(Paths.image('portalMG'));
+					midg.antialiasing = true;
+					midg.setGraphicSize(Std.int(midg.width * 0.75));
+					midg.scrollFactor.set(0.3, 0.2);
+					add(midg);
+
+					var setting:FlxSprite = new FlxSprite(-730, -50).loadGraphic(Paths.image('portalset'));
+					setting.antialiasing = true;
+					setting.setGraphicSize(Std.int(setting.width * 0.9));
+					add(setting);
+
+					var portal:FlxSprite = new FlxSprite(-530, -100);
+					portal.frames = Paths.getSparrowAtlas('portal');
+					portal.animation.addByPrefix('idle', 'portal', 24);
+					portal.animation.play('idle');
+					//var portal:FlxSprite = new FlxSprite(-530, -100).loadGraphic(Paths.image('portal1'));
+					portal.antialiasing = true;
+					portal.setGraphicSize(Std.int(portal.width * 0.6));
+					add(portal);
+
+					var fg:FlxSprite = new FlxSprite(-1000, 350).loadGraphic(Paths.image('portalFG'));
+					fg.antialiasing = true;
+					fg.setGraphicSize(Std.int(fg.width * 0.65));
+					fg.scrollFactor.set(1.4, 1.2);
+					add(fg);
+
+
+				}
+
 			case 'stage':
 				{
 						defaultCamZoom = 0.9;
@@ -760,9 +811,9 @@ class PlayState extends MusicBeatState
 				camPos.x += 600;
 				dad.y += 300;
 			case 'piconjo':
-				camPos.set(dad.getGraphicMidpoint().x +100, dad.getGraphicMidpoint().y +100);
+				camPos.set(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 				dad.y += 75;
-				dad.x += 104;
+				dad.x += 54;
 			case 'piconjo-v':
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y -100);
 				dad.y += 10;
@@ -819,11 +870,13 @@ class PlayState extends MusicBeatState
 				// evilTrail.scrollFactor.set(1.1, 1.1);
 				}
 
-
 				boyfriend.x += 200;
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
+
+			case 'tehpr0tal':
+				dad.x -= 50;
 		}
 
 		add(gf);
@@ -1362,8 +1415,6 @@ class PlayState extends MusicBeatState
 		else
 			vocals = new FlxSound();
 
-		trace('loaded vocals');
-
 		FlxG.sound.list.add(vocals);
 
 		notes = new FlxTypedGroup<Note>();
@@ -1378,7 +1429,7 @@ class PlayState extends MusicBeatState
 
 		// Per song offset check
 		#if windows
-			var songPath = 'assets/data/' + StringTools.replace(PlayState.SONG.song," ", "-").toLowerCase() + '/';
+			var songPath = 'assets/data/' + PlayState.SONG.song.toLowerCase() + '/';
 			for(file in sys.FileSystem.readDirectory(songPath))
 			{
 				var path = haxe.io.Path.join([songPath, file]);
@@ -2055,6 +2106,8 @@ class PlayState extends MusicBeatState
 
 				switch (dad.curCharacter)
 				{
+					case 'piconjo':
+						camFollow.x = dad.getMidpoint().x + 200;
 					case 'mom':
 						camFollow.y = dad.getMidpoint().y;
 					case 'senpai':
@@ -3144,6 +3197,7 @@ class PlayState extends MusicBeatState
 				/*if (mashing > getKeyPresses(note) && mashViolations <= 2)
 				{
 					mashViolations++;
+
 					goodNoteHit(note, (mashing > getKeyPresses(note)));
 				}
 				else if (mashViolations > 2)
@@ -3461,27 +3515,12 @@ class PlayState extends MusicBeatState
 					case 88:
 						dad.playAnim('singSMOOCH', true);
 					case 92:
-						boyfriend.playAnim('hey', true);
-					case 114:
-						dad.playAnim('singSMOOCH', true);
-					case 146:
-						dad.playAnim('singSMOOCH', true);
-					case 178:
-						dad.playAnim('singSMOOCH', true);
-					case 210:
-						dad.playAnim('singSMOOCH', true);
-					case 370:
-						dad.playAnim('singSMOOCH', true);						
-					case 402:
+						boyfriend.playAnim('hey', true);					
+					case 621:
 						dad.playAnim('singSMOOCH', true);					
-					case 434:
-						dad.playAnim('singSMOOCH', true);						
-					case 466:
-						dad.playAnim('singSMOOCH', true);						
-					case 614:
-						dad.playAnim('singSMOOCH', true);					
-					case 616:
-						boyfriend.playAnim('hey', true);						}
+					case 623:
+						boyfriend.playAnim('hey', true);						
+				}
 			}	
 
 		switch (curStage)
