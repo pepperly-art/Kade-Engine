@@ -1,15 +1,20 @@
-![Kade Engine logo](https://user-images.githubusercontent.com/26305836/110529589-4b4eb600-80ce-11eb-9c44-e899118b0bf0.png)
+![Vs Piconjo Gif](https://cdn.discordapp.com/attachments/628737288968470538/851887347238305792/vs_piconjo_gif.gif)
 
-[![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Windows?label=windows%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/build/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Macos?label=macOS%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/build/artifacts)  [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Linux?label=linux%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/build/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/daniel11420/KadeEngineWeb?label=html5&20build)](https://ci.appveyor.com/project/daniel11420/KadeEngineWeb) [![Discord](https://img.shields.io/discord/808039740464300104?label=discord)](https://discord.gg/MG6GQFh52U) [![GitHub issues](https://img.shields.io/github/issues/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/pulls) []() []()
+## Friday Night Funkin' VS Piconjo!
 
-![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/KadeDev/Kade-Engine/latest) ![GitHub repo size](https://img.shields.io/github/repo-size/KadeDev/Kade-Engine) ![Lines of code](https://img.shields.io/tokei/lines/github/KadeDev/Kade-Engine) ![Supported platforms](https://img.shields.io/badge/supported%20platforms-windows%2C%20macOS%2C%20linux%2C%20html5-blue) ![GitHub all releases](https://img.shields.io/github/downloads/KadeDev/Kade-Engine/total) ![GitHub](https://img.shields.io/github/license/KadeDev/Kade-Engine) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/KadeDev/Kade-Engine?include_prereleases&label=latest%20version) 
+OG FNF Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgrounds](https://www.newgrounds.com/portal/view/770371) ⋅ [source code on GitHub](https://github.com/ninjamuffin99/Funkin)**
+> Uh oh! You and your girlfriend are trying to spam Teh Pr0tal with badly recorded Let's Plays and memes featuring you, but someone is standing in your way! Are you going to die? Or fall in love!?
 
-# Friday Night Funkin': Kade Engine
-## Friday Night Funkin'
-**Friday Night Funkin'** is a rhythm game originally made for Ludum Dare 47 "Stuck In a Loop".
+**To anyone who wants to use my art / source for future Piconjo-themed mods:** Feel free and have fun! Just credit me (Pepperly) for the art! Please don't use my assets for profit, though. (also maybe @ me somewhere if you use them I wanna plaaay lmao)
 
-Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgrounds](https://www.newgrounds.com/portal/view/770371) ⋅ [source code on GitHub](https://github.com/ninjamuffin99/Funkin)**
-> Uh oh! Your tryin to kiss ur hot girlfriend, but her MEAN and EVIL dad is trying to KILL you! He's an ex-rockstar, the only way to get to his heart? The power of music... 
+**If you hate the special arrow animations** in Piconjo Never Dies, turn off Distractions OR remove the modchart.lua file within Assets/Data/Piconjo-Never-Dies
+
+## Bugs
+There are a couple small bugs I don't know how to iron out, came with KadeEngine, I think:
+- Changing the song offset within Piconjo Never Dies causes an error / crash.
+- Sometimes when loading the Customization screen, boyfriend refuses to load and will crash the game. Going into any song first and backing out tends to make it accessible again.
+- Arrow trails are broken again/still.
+
 
 ## Kade Engine
 **Kade Engine** is a mod for Friday Night Funkin', including a full engine rework, replays, and more.
@@ -23,26 +28,25 @@ If you're looking for documentation, changelogs, or guides, you can find those o
 
 # Previews ([skip](#features))
 
-![Tutorial (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113989685-fa5aea80-9850-11eb-9180-f5819a774c79.gif) ![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113990845-2c208100-9852-11eb-8e6d-f1c9e8439871.gif)
-
-![Roses (Hard) on Upscroll](https://user-images.githubusercontent.com/15311104/113993573-e31dfc00-9854-11eb-82ae-1f29dc8a0b04.png)
-
-![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113991654-f4660900-9852-11eb-8c3d-f3927571f19b.png)
-
-![He malding](https://user-images.githubusercontent.com/15311104/113993693-02b52480-9855-11eb-9975-eb8a7a1be8d1.png)
-
-![Free Play selection screen](https://i.imgur.com/LR0eWIC.png)
-
-![Options Menu](https://i.imgur.com/LBXW9C1.png)
+Piconjo <3s j00!!! ![Smooch](https://cdn.discordapp.com/attachments/628737288968470538/849869998117224488/piconjo_crop.gif)
+![Main Menu](https://cdn.discordapp.com/attachments/628737288968470538/851891518847189093/unknown.png)
+![The Piece day Resistance](https://cdn.discordapp.com/attachments/628737288968470538/851893356232572938/unknown.png)
+![Philly](https://cdn.discordapp.com/attachments/628737288968470538/851891875212296292/unknown.png)
+![The Virgin Piconjo is here too I guess](https://cdn.discordapp.com/attachments/628737288968470538/851893861454184508/unknown.png)
+sorry about my face lmao
 
 # Features
 
+ - **One goofy song**
+     - It's Piconjo, what else would you expect. Also I don't know how to make music so this is all you get unless someone gives me more, lmao.
+ - **TWO Piconjos**
+     - We got the Chad, Real Piconjo, hotter than ever, but also the Virgin Mindchamber Piconjo for the people who prefer the greasy little gremlin seen in Newgrounds Rumble.
  - **New Input System**
 	 - An improved input system, similar to Quaver or Etterna, with less delays, less dropped inputs and other improvements.
  - **More information during gameplay**
 	 - While you're playing, we show you information about how you're doing, such as your accuracy, combo break count, notes per second, and your grade/rating.
- - **Better key layouts**
-	 - Instead of being forced to use WASD and the arrow keys, now you can play with DFJK!
+ - **Editable Keys**
+	 - Hey buddy, guess what, you can customize your keys. How awesome is that.
  - **Replays** (in beta)
 	 - Have you ever gotten a crazy score but didn't record? The replay system solves that: it automatically saves a "replay" of your gameplay every time you complete a song, which you can play back inside of the game. 
 	 - Replays just store information about what you're doing, they don't actually record the screen -- so they take up way less space on your disk than videos.
@@ -50,6 +54,13 @@ If you're looking for documentation, changelogs, or guides, you can find those o
 	 - If your headphones are delayed, you can set an offset in the options menu to line the game up with the delay and play with synced audio like intended.
 
 # Credits
+
+### vs Piconjo:
+ - Pepperly - [Newgrounds](https://pepperly.newgrounds.com/) | [Twitter](https://twitter.com/pepperly_art) |  [Caard](https://pepperly.carrd.co/) - All New Art: Piconjo, Piconjo-V, T3h Pr0ta1 Stage, Menu Image | Additional Programming | Charting. Yes, all of it.
+ - Piconjo - [Newgrounds](https://piconjo.newgrounds.com/) / [Patreonjo]() - Chad Piconjo Design | Stage Music: "Piconjo Never Dies"
+ - Mindchamber - [Newgrounds](https://mindchamber.newgrounds.com/games) - Virgin Piconjo Design
+ - Zander Noriega - [Open Game Art](https://opengameart.org/content/fight-them-until-we-cant) - Menu Music: "Fight them Until We Can't"
+
 ### Friday Night Funkin'
  - [ninjamuffin99](https://twitter.com/ninja_muffin99) - Programming
  - [PhantomArcade3K](https://twitter.com/phantomarcade3k) and [Evilsk8r](https://twitter.com/evilsk8r) - Art

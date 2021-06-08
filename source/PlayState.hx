@@ -814,12 +814,12 @@ class PlayState extends MusicBeatState
 				dad.y += 300;
 			case 'piconjo':
 				camPos.set(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
-				dad.y += 75;
-				dad.x += 54;
+				dad.y += 111;
+				dad.x -= 48;
 			case 'piconjo-v':
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y -100);
-				dad.y += 10;
-				dad.x += 150;
+				dad.x += 147;
+				dad.y += 102;
 			case 'parents-christmas':
 				dad.x -= 500;
 			case 'senpai':
@@ -879,6 +879,7 @@ class PlayState extends MusicBeatState
 				gf.y += 300;
 
 			case 'tehpr0tal':
+				boyfriend.y += 50;
 				dad.x -= 50;
 		}
 
@@ -1392,7 +1393,7 @@ class PlayState extends MusicBeatState
 		// Song check real quick
 		switch(curSong)
 		{
-			case 'Bopeebo' | 'Philly' | 'Blammed' | 'Cocoa' | 'Eggnog': allowedToHeadbang = true;
+			case 'Bopeebo' | 'Philly' | 'Blammed' | 'Cocoa' | 'Eggnog' | 'Piconjo-Never-Dies' : allowedToHeadbang = true;
 			default: allowedToHeadbang = false;
 		}
 		
@@ -2080,6 +2081,33 @@ class PlayState extends MusicBeatState
 										triggeredAlready = true;
 									}
 								}else triggeredAlready = false;
+							}
+						}
+						case 'Piconjo-Never-Dies':
+						{
+							// Where it starts || where it ends
+							if(curStep > 80 && curStep < 500)
+							{
+								if(curStep == 122 || curStep == 126 || curStep == 158 || curStep == 186 || curStep == 190 || curStep == 222 || curStep == 378 || curStep == 382 || curStep == 414 || curStep == 442 || curStep == 446 || curStep == 478 )
+								{
+									if(!triggeredAlready)
+									{
+										gf.playAnim('cheer');
+										trace('yay');
+										triggeredAlready = true;
+									}
+								}
+								if(curStep == 92 || curStep == 614)
+								{
+									if(!triggeredAlready)
+									{
+										gf.playAnim('cheer');
+										boyfriend.playAnim('hey', true);
+										trace('yay');
+										triggeredAlready = true;
+									}
+								}
+								else triggeredAlready = false;
 							}
 						}
 					}
@@ -3513,20 +3541,24 @@ class PlayState extends MusicBeatState
 				dad.playAnim('cheer', true);
 			}
 
-		if (curSong == 'Piconjo Never Dies' && dad.curCharacter == 'piconjo')  
+		if (curSong == 'Piconjo-Never-Dies' && dad.curCharacter == 'piconjo')  
 			{
 				switch (curStep)
 				{
 					case 88:
 						dad.playAnim('singSMOOCH', true);
-					case 92:
-						boyfriend.playAnim('hey', true);					
-					case 621:
-						dad.playAnim('singSMOOCH', true);					
-					case 623:
-						boyfriend.playAnim('hey', true);						
-				}
-			}	
+						trace('chu');
+					case 612:
+						dad.playAnim('singSMOOCH', true);
+						trace('chu');
+				}			
+			}
+		if (curSong == 'Piconjo-Never-Dies' && curBeat >= 90 && curBeat < 101 && camZooming && FlxG.camera.zoom < 1.35)
+			{
+				FlxG.camera.zoom += 0.015;
+				camHUD.zoom += 0.03;
+			}
+
 
 		switch (curStage)
 		{
